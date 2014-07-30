@@ -5,7 +5,7 @@ class Table < UITableViewController
   end
 
   def tableView(tableView, numberOfRowsInSection:section)
-    20
+    1
   end
 
   def tableView(tableView, heightForRowAtIndexPath:indexPath)
@@ -29,6 +29,14 @@ class Table < UITableViewController
     cell.contentView.addSubview(@layout.view)
 
     cell
+  end
+
+  def touch_first
+    p 'touching first'
+  end
+
+  def touch_second
+    p 'touching second'
   end
 
   def viewDidLoad
