@@ -34,37 +34,31 @@ class CellLayout < MotionKit::Layout
 
   def cell_title_style
     text 'Hello ! Click a button below'
-    font UIFont.systemFontOfSize(16)
+    font 'Helvetica-Bold'.uifont(16)
     text_alignment NSTextAlignmentCenter
   end
 
   def common_button_style
-    title_color UIColor.blackColor
+    title_color :black.uicolor
     titleLabel {
-      font UIFont.fontWithName("Helvetica-Bold", size:14)
-      text_color UIColor.blackColor
-      background_color UIColor.clearColor
+      font 'Helvetica-Nueue'.uifont(14)
+      text_color :black.uicolor
+      background_color :clear.uicolor
       text_alignment NSTextAlignmentCenter
     }
-    background_color UIColor.colorWithRed(220.0/255.0, green:230.0/255.0, blue:240.0/255.0, alpha:1)
+    background_color [220, 230, 240].uicolor
     layer do
       corner_radius 10
     end
   end
 
   def cell_btn_1_style
-    title 'Click 1'
+    title 'Shake Screen'
     common_button_style
-    target.on :touch do 
-      trigger(:touch_first)
-    end
   end
 
   def cell_btn_2_style
-    title 'Click 2'
+    title 'Slide Screen'
     common_button_style
-    target.on :touch do 
-      trigger(:touch_second)
-    end
   end
 end
